@@ -1,1 +1,7 @@
 site_name: DAZSER
+site_url: https://dazser.github.io/docs/
+repo_url: https://github.com/dazser/docs/
+site_author: Kyle McNally
+copyright: "2021"
+theme:
+  name: readthedocs
