@@ -5,3 +5,7 @@ To upload a Cost of Living Adjustment file, put a new CSV file with the column t
 `id,lastColaAmount,lastColaDate,newAmount` to the S3 Bucket `s3://dazser-files/cola/region/*.csv`. This will kick off
 `backend/cola.ts#default()` run which will process the CSV file and upload the results to specified
 region.
+
+|  | Level |
+| --- | --- |
+| Permissions | Administrator |
