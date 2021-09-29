@@ -1,2 +1,2 @@
 mkdocs
-mkdocs-git-revision-date-plugin
+mkdocs-git-revision-date-localized-plugin
