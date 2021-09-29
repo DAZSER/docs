@@ -5,3 +5,7 @@ site_author: Kyle McNally
 copyright: "2021"
 theme:
   name: readthedocs
+plugins:
+  - search
+  - git-revision-date-localized
+
