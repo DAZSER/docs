@@ -191,10 +191,9 @@ is the source of the list.</p>
 <p>This will upload the prospects into the <code>x_prospects</code> table. The next step is to run the geocoder. This should be
 running every 15 minutes, but may not be for <code>x_prospects</code>.</p>
 <h2 id="deduplicate-tm-prospects">Deduplicate TM Prospects</h2>
-<p>Finally, run <code>deduplicate-x-prospects.ts</code>. This
-is a Lambda function that must be invoked. (This is not setup to be automatic yet,
-<a href="https://github.com/DAZSER/backend/issues/59">tracked here</a>). This function will clean up all the NAICS codes, remove
-any obvious duplicates (Same InfoUSA number, same exact geocode), deal with bad zip codes, etc...</p>
+<p>Finally, run <code>deduplicate-x-prospects.ts</code>. This is a node function that must be run manually (NOT a Lambda function).
+This function will clean up all the NAICS codes, remove any obvious duplicates
+(Same InfoUSA number, same exact geocode), deal with bad zip codes, etc...</p>
 <table>
 <thead>
 <tr>
@@ -205,7 +204,7 @@ any obvious duplicates (Same InfoUSA number, same exact geocode), deal with bad 
 <tbody>
 <tr>
 <td>Administrator</td>
-<td>Feb 17, 2022 04:20:03 PM</td>
+<td>Feb 17, 2022 04:22:08 PM</td>
 </tr>
 </tbody>
 </table>
