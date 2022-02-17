@@ -5,7 +5,9 @@ site_author: Kyle McNally
 copyright: "2021"
 theme:
   name: readthedocs
+  custom_dir: overrides/
+  logo: docs/crown.png
 plugins:
   - search
   - git-revision-date-localized
-
+  - macros
