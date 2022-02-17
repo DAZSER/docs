@@ -87,6 +87,8 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Uploading new prospects into the web app</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#deduplicate-tm-prospects">Deduplicate TM Prospects</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -187,7 +189,9 @@ is the source of the list.</p>
 </tbody>
 </table>
 <p>This will upload the prospects into the <code>x_prospects</code> table. The next step is to run the geocoder. This should be
-running every 15 minutes, but may not be for <code>x_prospects</code>. Finally, run <code>deduplicate-x-prospects.ts</code>. This
+running every 15 minutes, but may not be for <code>x_prospects</code>.</p>
+<h2 id="deduplicate-tm-prospects">Deduplicate TM Prospects</h2>
+<p>Finally, run <code>deduplicate-x-prospects.ts</code>. This
 is a Lambda function that must be invoked. (This is not setup to be automatic yet,
 <a href="https://github.com/DAZSER/backend/issues/59">tracked here</a>). This function will clean up all the NAICS codes, remove
 any obvious duplicates (Same InfoUSA number, same exact geocode), deal with bad zip codes, etc...</p>
@@ -201,7 +205,7 @@ any obvious duplicates (Same InfoUSA number, same exact geocode), deal with bad 
 <tbody>
 <tr>
 <td>Administrator</td>
-<td>Feb 17, 2022 04:15:55 PM</td>
+<td>Feb 17, 2022 04:20:03 PM</td>
 </tr>
 </tbody>
 </table>
