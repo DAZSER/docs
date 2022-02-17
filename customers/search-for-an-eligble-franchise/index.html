@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Kyle McNally">
-  <link rel="canonical" href="https://dazser.github.io/docs/accounting/cost-of-living-adjustments/">
+  <link rel="canonical" href="https://dazser.github.io/docs/customers/search-for-an-eligble-franchise/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Cost of Living Adjustments - DAZSER</title>
+  <title>Search for an eligble franchise - DAZSER</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Cost of Living Adjustments";
-    var mkdocs_page_input_path = "accounting/cost-of-living-adjustments.md";
-    var mkdocs_page_url = "/docs/accounting/cost-of-living-adjustments/";
+    var mkdocs_page_name = "Search for an eligble franchise";
+    var mkdocs_page_input_path = "customers/search-for-an-eligble-franchise.md";
+    var mkdocs_page_url = "/docs/customers/search-for-an-eligble-franchise/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -55,10 +55,8 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Accounting</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Cost of Living Adjustments</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../accounting/cost-of-living-adjustments/">Cost of Living Adjustments</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Admin</span></p>
@@ -67,8 +65,8 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Customers</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../customers/search-for-an-eligble-franchise/">Search for an eligble franchise</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Search for an eligble franchise</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Sales</span></p>
@@ -104,14 +102,14 @@
     
       
         
-          <li>Accounting &raquo;</li>
+          <li>Customers &raquo;</li>
         
       
     
-    <li>Cost of Living Adjustments</li>
+    <li>Search for an eligble franchise</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/dazser/docs/edit/master/docs/accounting/cost-of-living-adjustments.md"
+        <a href="https://github.com/dazser/docs/edit/master/docs/customers/search-for-an-eligble-franchise.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -123,16 +121,11 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="cost-of-living-adjustments">Cost of Living Adjustments</h1>
-<p>To upload a Cost of Living Adjustment file, upload a new CSV file with the column titles of
-<code>id,lastColaAmount,lastColaDate,newAmount</code> to the S3 Bucket <code>s3://dazser-files/cola/{{ region }}/*.csv</code>. This will kick
-off <a href="https://github.com/DAZSER/backend/blob/master/src/cola.ts"><code>backend/cola.ts#default()</code></a> which will process the
-CSV file and upload the results to specified region.</p>
-<p>Example:</p>
-<pre><code>id,newAmount,lastColaDate,lastColaAmount
-4517,1168,10/1/2021,1
-7497,1,10/1/2021,1
-</code></pre>
+                <p>To look for a Franchisee that would be a good fit for a customer, you can use the Customer/Franchise Map.</p>
+<video controls style="width:100%">
+  <source src="https://dazser-videos.s3.amazonaws.com/Maps.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 <table>
 <thead>
 <tr>
@@ -142,7 +135,7 @@ CSV file and upload the results to specified region.</p>
 </thead>
 <tbody>
 <tr>
-<td>Administrator</td>
+<td>{{ permissions }}</td>
 <td>Feb 17, 2022 03:41:00 PM</td>
 </tr>
 </tbody>
@@ -154,10 +147,10 @@ CSV file and upload the results to specified region.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../admin/address-sanatization-and-geocoding/" class="btn btn-neutral float-right" title="Address Sanatization and Geocoding">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../sales/adding-a-custom-appointment/" class="btn btn-neutral float-right" title="Adding a custom Appointment">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../jinja/" class="btn btn-neutral" title="Jinja"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../admin/address-sanatization-and-geocoding/" class="btn btn-neutral" title="Address Sanatization and Geocoding"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -189,10 +182,10 @@ CSV file and upload the results to specified region.</p>
         </span>
     
     
-      <span><a href="../../jinja/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../admin/address-sanatization-and-geocoding/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../admin/address-sanatization-and-geocoding/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../sales/adding-a-custom-appointment/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

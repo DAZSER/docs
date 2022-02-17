@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Kyle McNally">
-  <link rel="canonical" href="https://dazser.github.io/docs/accounting/cost-of-living-adjustments/">
+  <link rel="canonical" href="https://dazser.github.io/docs/admin/address-sanatization-and-geocoding/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Cost of Living Adjustments - DAZSER</title>
+  <title>Address Sanatization and Geocoding - DAZSER</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Cost of Living Adjustments";
-    var mkdocs_page_input_path = "accounting/cost-of-living-adjustments.md";
-    var mkdocs_page_url = "/docs/accounting/cost-of-living-adjustments/";
+    var mkdocs_page_name = "Address Sanatization and Geocoding";
+    var mkdocs_page_input_path = "admin/address-sanatization-and-geocoding.md";
+    var mkdocs_page_url = "/docs/admin/address-sanatization-and-geocoding/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -55,15 +55,15 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Accounting</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Cost of Living Adjustments</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../accounting/cost-of-living-adjustments/">Cost of Living Adjustments</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Admin</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../admin/address-sanatization-and-geocoding/">Address Sanatization and Geocoding</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Address Sanatization and Geocoding</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Customers</span></p>
@@ -104,14 +104,14 @@
     
       
         
-          <li>Accounting &raquo;</li>
+          <li>Admin &raquo;</li>
         
       
     
-    <li>Cost of Living Adjustments</li>
+    <li>Address Sanatization and Geocoding</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/dazser/docs/edit/master/docs/accounting/cost-of-living-adjustments.md"
+        <a href="https://github.com/dazser/docs/edit/master/docs/admin/address-sanatization-and-geocoding.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -123,27 +123,34 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="cost-of-living-adjustments">Cost of Living Adjustments</h1>
-<p>To upload a Cost of Living Adjustment file, upload a new CSV file with the column titles of
-<code>id,lastColaAmount,lastColaDate,newAmount</code> to the S3 Bucket <code>s3://dazser-files/cola/{{ region }}/*.csv</code>. This will kick
-off <a href="https://github.com/DAZSER/backend/blob/master/src/cola.ts"><code>backend/cola.ts#default()</code></a> which will process the
-CSV file and upload the results to specified region.</p>
-<p>Example:</p>
-<pre><code>id,newAmount,lastColaDate,lastColaAmount
-4517,1168,10/1/2021,1
-7497,1,10/1/2021,1
-</code></pre>
+                <h1 id="address-sanatization-and-geocoding">Address Sanatization and Geocoding</h1>
+<ol>
+<li>The entity gets added and we sanatize the Address according to the USPS, <code>bad_address</code> is set to <code>0</code>.</li>
+<li>Every 15 minutes, I attempt to Geocode any address that has a <code>bad_address</code> of <code>0</code> or <code>2</code>.</li>
+</ol>
 <table>
 <thead>
 <tr>
-<th>Permissions</th>
-<th>Last Updated</th>
+<th><code>bad_address</code></th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Administrator</td>
-<td>Feb 17, 2022 03:41:00 PM</td>
+<td><code>0</code></td>
+<td>Valid, Found, and Sanatized address &amp; geocode</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>Bad Original Address</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>Updated USPS Address, needs Geocode</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>Unable to Verify address</td>
 </tr>
 </tbody>
 </table>
@@ -154,10 +161,10 @@ CSV file and upload the results to specified region.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../admin/address-sanatization-and-geocoding/" class="btn btn-neutral float-right" title="Address Sanatization and Geocoding">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../customers/search-for-an-eligble-franchise/" class="btn btn-neutral float-right" title="Search for an eligble franchise">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../jinja/" class="btn btn-neutral" title="Jinja"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../accounting/cost-of-living-adjustments/" class="btn btn-neutral" title="Cost of Living Adjustments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -189,10 +196,10 @@ CSV file and upload the results to specified region.</p>
         </span>
     
     
-      <span><a href="../../jinja/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../accounting/cost-of-living-adjustments/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../admin/address-sanatization-and-geocoding/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../customers/search-for-an-eligble-franchise/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

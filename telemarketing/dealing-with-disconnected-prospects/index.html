@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Kyle McNally">
-  <link rel="canonical" href="https://dazser.github.io/docs/accounting/cost-of-living-adjustments/">
+  <link rel="canonical" href="https://dazser.github.io/docs/telemarketing/dealing-with-disconnected-prospects/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Cost of Living Adjustments - DAZSER</title>
+  <title>Dealing with disconnected prospects - DAZSER</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Cost of Living Adjustments";
-    var mkdocs_page_input_path = "accounting/cost-of-living-adjustments.md";
-    var mkdocs_page_url = "/docs/accounting/cost-of-living-adjustments/";
+    var mkdocs_page_name = "Dealing with disconnected prospects";
+    var mkdocs_page_input_path = "telemarketing/dealing-with-disconnected-prospects.md";
+    var mkdocs_page_url = "/docs/telemarketing/dealing-with-disconnected-prospects/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -55,10 +55,8 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Accounting</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Cost of Living Adjustments</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../accounting/cost-of-living-adjustments/">Cost of Living Adjustments</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Admin</span></p>
@@ -77,10 +75,12 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Telemarketing</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../telemarketing/dealing-with-disconnected-prospects/">Dealing with disconnected prospects</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Dealing with disconnected prospects</a>
+    <ul class="current">
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../telemarketing/dealing-with-duplicate-prospects/">Dealing with duplicate prospects</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../dealing-with-duplicate-prospects/">Dealing with duplicate prospects</a>
                     </li>
                 </ul>
       </div>
@@ -104,14 +104,14 @@
     
       
         
-          <li>Accounting &raquo;</li>
+          <li>Telemarketing &raquo;</li>
         
       
     
-    <li>Cost of Living Adjustments</li>
+    <li>Dealing with disconnected prospects</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/dazser/docs/edit/master/docs/accounting/cost-of-living-adjustments.md"
+        <a href="https://github.com/dazser/docs/edit/master/docs/telemarketing/dealing-with-disconnected-prospects.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -123,16 +123,15 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="cost-of-living-adjustments">Cost of Living Adjustments</h1>
-<p>To upload a Cost of Living Adjustment file, upload a new CSV file with the column titles of
-<code>id,lastColaAmount,lastColaDate,newAmount</code> to the S3 Bucket <code>s3://dazser-files/cola/{{ region }}/*.csv</code>. This will kick
-off <a href="https://github.com/DAZSER/backend/blob/master/src/cola.ts"><code>backend/cola.ts#default()</code></a> which will process the
-CSV file and upload the results to specified region.</p>
-<p>Example:</p>
-<pre><code>id,newAmount,lastColaDate,lastColaAmount
-4517,1168,10/1/2021,1
-7497,1,10/1/2021,1
-</code></pre>
+                <h1 id="dealing-with-disconnected-prospects">Dealing with disconnected prospects</h1>
+<p>During the course of calling, a Sales rep may indicate that the prospect they just called, had a disconnected number. They indicate this by selecting ‘Number Disconnected’ in the Call Outcome list.</p>
+<p><img alt="" src="../dropdown.png" /></p>
+<p>When the Sales rep selects this Outcome, the Prospect will be ‘flagged’ for verification.</p>
+<p>In order to look at these prospects, go into the Prospects screen, and select ‘Yes’ under Verify</p>
+<p><img alt="" src="../prospects-item.png" /><img alt="" src="../verify.png" /></p>
+<p>This will populate the list of prospects that need verification. You may now open each prospect, Verify the ‘Disconnected’ status by calling or searching for the correct Phone number, and, if necessary, select DNC with the reason of Disconnected.</p>
+<p><img alt="" src="../dnc-setting.png" /></p>
+<p>Don’t forget to Uncheck ‘Verification Needed’ before Saving!</p>
 <table>
 <thead>
 <tr>
@@ -142,7 +141,7 @@ CSV file and upload the results to specified region.</p>
 </thead>
 <tbody>
 <tr>
-<td>Administrator</td>
+<td>{{ permissions }}</td>
 <td>Feb 17, 2022 03:41:00 PM</td>
 </tr>
 </tbody>
@@ -154,10 +153,10 @@ CSV file and upload the results to specified region.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../admin/address-sanatization-and-geocoding/" class="btn btn-neutral float-right" title="Address Sanatization and Geocoding">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../dealing-with-duplicate-prospects/" class="btn btn-neutral float-right" title="Dealing with duplicate prospects">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../jinja/" class="btn btn-neutral" title="Jinja"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../sales/adding-a-custom-appointment/" class="btn btn-neutral" title="Adding a custom Appointment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -189,10 +188,10 @@ CSV file and upload the results to specified region.</p>
         </span>
     
     
-      <span><a href="../../jinja/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../sales/adding-a-custom-appointment/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../admin/address-sanatization-and-geocoding/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../dealing-with-duplicate-prospects/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

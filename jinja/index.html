@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Kyle McNally">
+  <link rel="canonical" href="https://dazser.github.io/docs/jinja/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Jinja - DAZSER</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Jinja";
+    var mkdocs_page_input_path = "jinja.md";
+    var mkdocs_page_url = "/docs/jinja/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DAZSER</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to DAZSER Documentation</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Jinja</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#general-list">General List</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#config-information">Config Information</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#macros">Macros</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#git-information">Git Information</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#page-attributes">Page Attributes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#plugin-filters">Plugin Filters</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#builtin-jinja2-filters">Builtin Jinja2 Filters</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Accounting</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../accounting/cost-of-living-adjustments/">Cost of Living Adjustments</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Admin</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../admin/address-sanatization-and-geocoding/">Address Sanatization and Geocoding</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Customers</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../customers/search-for-an-eligble-franchise/">Search for an eligble franchise</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Sales</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sales/adding-a-custom-appointment/">Adding a custom Appointment</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Telemarketing</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telemarketing/dealing-with-disconnected-prospects/">Dealing with disconnected prospects</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../telemarketing/dealing-with-duplicate-prospects/">Dealing with duplicate prospects</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DAZSER</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Jinja</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dazser/docs/edit/master/docs/jinja.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p>Theme(name='readthedocs', dirs=['/home/runner/work/docs/docs/overrides/', '/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/mkdocs/themes/readthedocs', '/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/mkdocs/templates', '/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/mkdocs/contrib/search/templates'], static_templates=['sitemap.xml', 'search.html', '404.html'], locale=Locale('en'), include_search_page=True, search_index_only=False, highlightjs=True, hljs_languages=[], analytics={'gtag': None}, include_homepage_in_sidebar=True, prev_next_buttons_location='bottom', navigation_depth=4, titles_only=False, sticky_navigation=True, collapse_navigation=True, logo='docs/crown.png')</p>
+<h1 id="macros-plugin-environment">Macros Plugin Environment</h1>
+<h2 id="general-list">General List</h2>
+<p>All available variables and filters within the macros plugin:</p>
+<table class="pretty" style="background-color: #F0FFFF; border:1px solid #DCDCDC; padding: 5px">
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Variable</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Type</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Content</th>
+
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>extra</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>dict</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>config</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>Config</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">config_file_path = '/home/runner/work/docs/docs/mkdocs.yml', site_name = 'DAZSER', <b>nav</b> [<i>NoneType</i>], <b>pages</b> [<i>NoneType</i>], site_url = 'https://dazser.github.io/docs/', <b>site_description</b> [<i>NoneType</i>], site_author = 'Kyle McNally', <b>theme</b> [<i>Theme</i>], docs_dir = '/home/runner/work/docs/docs/docs', site_dir = '/home/runner/work/docs/docs/site', copyright = '2022', <b>google_analytics</b> [<i>NoneType</i>], <b>dev_addr</b> [<i>Address</i>], use_directory_urls = True, repo_url = 'https://github.com/dazser/docs/', repo_name = 'GitHub', edit_uri = 'edit/master/docs/', extra_css = [], extra_javascript = ['search/main.js'], extra_templates = [], markdown_extensions = ['toc', 'tables', 'fenced_code'], <b>mdx_configs</b> [<i>dict</i>], strict = False, remote_branch = 'gh-pages', remote_name = 'origin', <b>extra</b> [<i>SubConfig</i>], <b>plugins</b> [<i>PluginCollection</i>]</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>environment</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>dict</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">system = 'Linux', system_version = '5.11.0-1028-azure', python_version = '3.10.2', mkdocs_version = '1.2.3', macros_plugin_version = '0.6.4', jinja2_version = '3.0.3'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>plugin</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>Config</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">module_name = 'main', modules = [], include_dir = '', include_yaml = [], j2_block_start_string = '', j2_block_end_string = '', j2_variable_start_string = '', j2_variable_end_string = '', on_undefined = 'keep', verbose = False</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>git</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>dict</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">status = True, <b>date</b> [<i>datetime</i>], short_commit = 'd3df053', commit = 'd3df053cfad0a6b04d9607fc992e75d745aeb038', tag = '', author = 'Kyle McNally', author_email = 'kyle@dazser.com', committer = 'Kyle McNally', committer_email = 'kyle@dazser.com', date_ISO = 'Thu Feb 17 15:41:00 2022 -0500', message = 'make sure the folder exists', raw = 'commit d3df053cfad0a6b04d9607fc992e75d745aeb038\nAuthor: Kyle McNally <kyle@dazser.com>\nDate:   Thu Feb 17 15:41:00 2022 -0500\n\n    make sure the folder exists', root_dir = '/home/runner/work/docs/docs'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>macros</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>SuperDict</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>context</b> [<i>function</i>], <b>macros_info</b> [<i>function</i>], <b>now</b> [<i>function</i>], <b>fix_url</b> [<i>function</i>]</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>filters</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>dict</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>pretty</b> [<i>function</i>]</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>filters_builtin</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>dict</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>abs</b> [<i>builtin_function_or_method</i>], <b>attr</b> [<i>function</i>], <b>batch</b> [<i>function</i>], <b>capitalize</b> [<i>function</i>], <b>center</b> [<i>function</i>], <b>count</b> [<i>builtin_function_or_method</i>], <b>d</b> [<i>function</i>], <b>default</b> [<i>function</i>], <b>dictsort</b> [<i>function</i>], <b>e</b> [<i>builtin_function_or_method</i>], <b>escape</b> [<i>builtin_function_or_method</i>], <b>filesizeformat</b> [<i>function</i>], <b>first</b> [<i>function</i>], <b>float</b> [<i>function</i>], <b>forceescape</b> [<i>function</i>], <b>format</b> [<i>function</i>], <b>groupby</b> [<i>function</i>], <b>indent</b> [<i>function</i>], <b>int</b> [<i>function</i>], <b>join</b> [<i>function</i>], <b>last</b> [<i>function</i>], <b>length</b> [<i>builtin_function_or_method</i>], <b>list</b> [<i>function</i>], <b>lower</b> [<i>function</i>], <b>map</b> [<i>function</i>], <b>min</b> [<i>function</i>], <b>max</b> [<i>function</i>], <b>pprint</b> [<i>function</i>], <b>random</b> [<i>function</i>], <b>reject</b> [<i>function</i>], <b>rejectattr</b> [<i>function</i>], <b>replace</b> [<i>function</i>], <b>reverse</b> [<i>function</i>], <b>round</b> [<i>function</i>], <b>safe</b> [<i>function</i>], <b>select</b> [<i>function</i>], <b>selectattr</b> [<i>function</i>], <b>slice</b> [<i>function</i>], <b>sort</b> [<i>function</i>], <b>string</b> [<i>builtin_function_or_method</i>], <b>striptags</b> [<i>function</i>], <b>sum</b> [<i>function</i>], <b>title</b> [<i>function</i>], <b>trim</b> [<i>function</i>], <b>truncate</b> [<i>function</i>], <b>unique</b> [<i>function</i>], <b>upper</b> [<i>function</i>], <b>urlencode</b> [<i>function</i>], <b>urlize</b> [<i>function</i>], <b>wordcount</b> [<i>function</i>], <b>wordwrap</b> [<i>function</i>], <b>xmlattr</b> [<i>function</i>], <b>tojson</b> [<i>function</i>]</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>navigation</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>Navigation</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">Page(title='Welcome to DAZSER Documentation', url='/docs/')<br/>Page(title='Jinja', url='/docs/jinja/')<br/>Section(title='Accounting')<br/>    Page(title=[blank], url='/docs/accounting/cost-of-living-adjustments/')<br/>Section(title='Admin')<br/>    Page(title=[blank], url='/docs/admin/address-sanatization-and-geocoding/')<br/>Section(title='Customers')<br/>    Page(title=[blank], url='/docs/customers/search-for-an-eligble-franchise/')<br/>Section(title='Sales')<br/>    Page(title=[blank], url='/docs/sales/adding-a-custom-appointment/')<br/>Section(title='Telemarketing')<br/>    Page(title=[blank], url='/docs/telemarketing/dealing-with-disconnected-prospects/')<br/>    Page(title=[blank], url='/docs/telemarketing/dealing-with-duplicate-prospects/')</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>files</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>Files</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><mkdocs.structure.files.Files object at 0x7f416e2ae620></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>page</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>Page</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">Page(title='Jinja', url='/docs/jinja/')</td>
+
+        </tr>
+
+</table>
+
+<h2 id="config-information">Config Information</h2>
+<p>Standard MkDocs configuration information. Do not try to modify.</p>
+<p>e.g. <code>{{ config.docs_dir }}</code></p>
+<p>See also the <a href="https://www.MkDocs.org/user-guide/custom-themes/#config">MkDocs documentation on the config object</a>.</p>
+<table class="pretty" style="background-color: #F0FFFF; border:1px solid #DCDCDC; padding: 5px">
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Variable</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Type</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Content</th>
+
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>config_file_path</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'/home/runner/work/docs/docs/mkdocs.yml'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>site_name</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'DAZSER'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>nav</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>NoneType</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">None</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>pages</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>NoneType</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">None</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>site_url</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'https://dazser.github.io/docs/'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>site_description</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>NoneType</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">None</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>site_author</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'Kyle McNally'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>theme</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>Theme</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">Theme(name='readthedocs', dirs=['/home/runner/work/docs/docs/overrides/', '/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/mkdocs/themes/readthedocs', '/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/mkdocs/templates', '/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/mkdocs/contrib/search/templates'], static_templates=['sitemap.xml', 'search.html', '404.html'], locale=Locale('en'), include_search_page=True, search_index_only=False, highlightjs=True, hljs_languages=[], analytics={'gtag': None}, include_homepage_in_sidebar=True, prev_next_buttons_location='bottom', navigation_depth=4, titles_only=False, sticky_navigation=True, collapse_navigation=True, logo='docs/crown.png')</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>docs_dir</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'/home/runner/work/docs/docs/docs'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>site_dir</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'/home/runner/work/docs/docs/site'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>copyright</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'2022'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>google_analytics</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>NoneType</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">None</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>dev_addr</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>Address</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">Address(host='127.0.0.1', port=8000)</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>use_directory_urls</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>bool</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">True</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>repo_url</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'https://github.com/dazser/docs/'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>repo_name</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'GitHub'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>edit_uri</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'edit/master/docs/'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>extra_css</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>list</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">[]</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>extra_javascript</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>list</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">['search/main.js']</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>extra_templates</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>list</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">[]</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>markdown_extensions</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>list</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">['toc', 'tables', 'fenced_code']</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>mdx_configs</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>dict</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>strict</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>bool</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">False</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>remote_branch</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'gh-pages'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>remote_name</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'origin'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>extra</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>SubConfig</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">{}</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>plugins</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>PluginCollection</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>search</b> [<i>SearchPlugin</i>], <b>git-revision-date-localized</b> [<i>GitRevisionDateLocalizedPlugin</i>], <b>macros</b> [<i>MacrosPlugin</i>]</td>
+
+        </tr>
+
+</table>
+
+<h2 id="macros">Macros</h2>
+<p>These macros have been defined programmatically for this environment
+(module or pluglets). </p>
+<table class="pretty" style="background-color: #F0FFFF; border:1px solid #DCDCDC; padding: 5px">
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Variable</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Type</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Content</th>
+
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>context</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>obj, e</i>)<br/> <p><em>Default mkdocs_macro</em> List the defined variables</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>macros_info</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i></i>)<br/> <p>Test/debug function:         list useful documentation on the mkdocs_macro environment.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>now</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i></i>)<br/> <p>Get the current time (returns a datetime object).          Used alone, it provides a timestamp.         To get the year use <code>now().year</code>, for the month number          <code>now().month</code>, etc.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>fix_url</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>url, r</i>)<br/> <p>If url is relative, fix it so that it points to the docs diretory.     This is necessary because relative links in markdown must be adapted     in html ('img/foo.png' =&gt; '../img/img.png').</p></td>
+
+        </tr>
+
+</table>
+
+<h2 id="git-information">Git Information</h2>
+<p>Information available on the last commit and the git repository containing the
+documentation project:</p>
+<p>e.g. <code>{{ git.message }}</code></p>
+<table class="pretty" style="background-color: #F0FFFF; border:1px solid #DCDCDC; padding: 5px">
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Variable</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Type</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Content</th>
+
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>status</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>bool</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">True</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>date</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>datetime</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">datetime.datetime(2022, 2, 17, 15, 41, tzinfo=tzoffset(None, -18000))</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>short_commit</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'d3df053'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>commit</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'d3df053cfad0a6b04d9607fc992e75d745aeb038'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>tag</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">''</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>author</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'Kyle McNally'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>author_email</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'kyle@dazser.com'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>committer</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'Kyle McNally'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>committer_email</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'kyle@dazser.com'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>date_ISO</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'Thu Feb 17 15:41:00 2022 -0500'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>message</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'make sure the folder exists'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>raw</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'commit d3df053cfad0a6b04d9607fc992e75d745aeb038\nAuthor: Kyle McNally <kyle@dazser.com>\nDate:   Thu Feb 17 15:41:00 2022 -0500\n\n    make sure the folder exists'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>root_dir</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'/home/runner/work/docs/docs'</td>
+
+        </tr>
+
+</table>
+
+<h2 id="page-attributes">Page Attributes</h2>
+<p>Provided by MkDocs. These attributes change for every page
+(the attributes shown are for this page).</p>
+<p>e.g. <code>{{ page.title }}</code></p>
+<p>See also the <a href="https://www.MkDocs.org/user-guide/custom-themes/#page">MkDocs documentation on the page object</a>.</p>
+<table class="pretty" style="background-color: #F0FFFF; border:1px solid #DCDCDC; padding: 5px">
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Variable</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Type</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Content</th>
+
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>file</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>File</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>page</b> [<i>Page</i>], src_path = 'jinja.md', abs_src_path = '/home/runner/work/docs/docs/docs/jinja.md', name = 'jinja', dest_path = 'jinja/index.html', abs_dest_path = '/home/runner/work/docs/docs/site/jinja/index.html', url = 'jinja/'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>title</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'Jinja'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>parent</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>NoneType</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">None</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>children</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>NoneType</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">None</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>previous_page</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>Page</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">Page(title='Welcome to DAZSER Documentation', url='/docs/')</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>next_page</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>Page</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">Page(title=[blank], url='/docs/accounting/cost-of-living-adjustments/')</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>_Page__active</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>bool</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">False</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>is_section</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>bool</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">False</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>is_page</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>bool</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">True</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>is_link</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>bool</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">False</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>update_date</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'2022-02-17'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>canonical_url</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'https://dazser.github.io/docs/jinja/'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>abs_url</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'/docs/jinja/'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>edit_url</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'https://github.com/dazser/docs/edit/master/docs/jinja.md'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>markdown</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'{{ config.theme }}\n\n{{ macros_info() }}\n'</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>content</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>NoneType</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">None</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>toc</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>list</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">[]</td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>meta</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>dict</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">git_revision_date_localized = '<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2022</span>', git_revision_date_localized_raw_date = 'February 17, 2022', git_revision_date_localized_raw_datetime = 'February 17, 2022 20:39:38', git_revision_date_localized_raw_iso_date = '2022-02-17', git_revision_date_localized_raw_iso_datetime = '2022-02-17 20:39:38', git_revision_date_localized_raw_timeago = '<span class="timeago" datetime="2022-02-17T20:39:38+00:00" locale="en"></span>', git_site_revision_date_localized = '<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2022</span>', git_site_revision_date_localized_raw_date = 'February 17, 2022', git_site_revision_date_localized_raw_datetime = 'February 17, 2022 20:39:38', git_site_revision_date_localized_raw_iso_date = '2022-02-17', git_site_revision_date_localized_raw_iso_datetime = '2022-02-17 20:39:38', git_site_revision_date_localized_raw_timeago = '<span class="timeago" datetime="2022-02-17T20:39:38+00:00" locale="en"></span>'</td>
+
+        </tr>
+
+</table>
+
+<p>To have all titles of all pages, use:</p>
+<pre><code>
+{% for page in navigation.pages %}
+- {{ page.title }}
+{% endfor %}
+
+</code></pre>
+<h2 id="plugin-filters">Plugin Filters</h2>
+<p>These filters are provided as a standard by the macros plugin.</p>
+<table class="pretty" style="background-color: #F0FFFF; border:1px solid #DCDCDC; padding: 5px">
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Variable</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Type</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Content</th>
+
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>pretty</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>var_list, rows, header, e</i>)<br/> <p><em>Default mkdocs_macro</em> Prettify a dictionary or object          (used for environment documentation, or debugging).</p></td>
+
+        </tr>
+
+</table>
+
+<h2 id="builtin-jinja2-filters">Builtin Jinja2 Filters</h2>
+<p>These filters are provided by Jinja2 as a standard.</p>
+<p>See also the <a href="https://jinja.palletsprojects.com/en/2.11.x/templates/#builtin-filters">Jinja2 documentation on builtin filters</a>).</p>
+<table class="pretty" style="background-color: #F0FFFF; border:1px solid #DCDCDC; padding: 5px">
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Variable</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Type</th>
+
+    <th style="border:1px solid #DCDCDC; padding: 5px">Content</th>
+
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>abs</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>builtin_function_or_method</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><p>Return the absolute value of the argument.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>attr</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>environment, obj, name, value</i>)<br/> <p>Get an attribute of an object.  <code>foo|attr("bar")</code> works like     <code>foo.bar</code> just that always an attribute is returned and items are not     looked up.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>batch</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, linecount, fill_with, tmp, item</i>)<br/> <p>A filter that batches items. It works pretty much like <code>slice</code>     just the other way round. It returns a list of lists with the     given number of items. If you provide a second parameter this     is used to fill up missing items. See this example.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>capitalize</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>s</i>)<br/> <p>Capitalize a value. The first character will be uppercase, all others     lowercase.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>center</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, width</i>)<br/> <p>Centers the value in a field of a given width.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>count</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>builtin_function_or_method</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><p>Return the number of items in a container.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>d</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, default_value, boolean</i>)<br/> <p>If the value is undefined it will return the passed default value,     otherwise the value of the variable.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>default</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, default_value, boolean</i>)<br/> <p>If the value is undefined it will return the passed default value,     otherwise the value of the variable.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>dictsort</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, case_sensitive, by, reverse, sort_func</i>)<br/> <p>Sort a dict and yield (key, value) pairs. Python dicts may not     be in the order you want to display them in, so sort them first.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>e</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>builtin_function_or_method</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><p>Replace the characters <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>'</code>, and <code>"</code> in the string with HTML-safe sequences. Use this if you need to display text that might contain such characters in HTML.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>escape</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>builtin_function_or_method</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><p>Replace the characters <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>'</code>, and <code>"</code> in the string with HTML-safe sequences. Use this if you need to display text that might contain such characters in HTML.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>filesizeformat</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, binary, bytes, base, prefixes, i, prefix, unit</i>)<br/> <p>Format the value like a 'human-readable' file size (i.e. 13 kB,     4.1 MB, 102 Bytes, etc).  Per default decimal prefixes are used (Mega,     Giga, etc.), if the second parameter is set to <code>True</code> the binary     prefixes are used (Mebi, Gibi).</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>first</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>args, kwargs, b</i>)<br/> <p>Return the first item of a sequence.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>float</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, default</i>)<br/> <p>Convert the value into a floating point number. If the     conversion doesn't work it will return <code>0.0</code>. You can     override this default using the first parameter.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>forceescape</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value</i>)<br/> <p>Enforce HTML escaping.  This will probably double escape variables.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>format</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, args, kwargs</i>)<br/> <p>Apply the given values to a <code>printf-style</code>_ format string, like     <code>string % values</code>.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>groupby</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>args, kwargs, b</i>)<br/> <p>Group a sequence of objects by an attribute using Python's     :func:<code>itertools.groupby</code>. The attribute can use dot notation for     nested access, like <code>"address.city"</code>. Unlike Python's <code>groupby</code>,     the values are sorted first so only one group is returned for each     unique value.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>indent</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>s, width, first, blank, newline, rv, lines</i>)<br/> <p>Return a copy of the string with each line indented by 4 spaces. The     first line and blank lines are not indented by default.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>int</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, default, base</i>)<br/> <p>Convert the value into an integer. If the     conversion doesn't work it will return <code>0</code>. You can     override this default using the first parameter. You     can also override the default base (10) in the second     parameter, which handles input with prefixes such as     0b, 0o and 0x for bases 2, 8 and 16 respectively.     The base is ignored for decimal numbers and non-string values.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>join</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>args, kwargs, b</i>)<br/> <p>Return a string which is the concatenation of the strings in the     sequence. The separator between elements is an empty string per     default, you can define it with the optional parameter.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>last</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>environment, seq</i>)<br/> <p>Return the last item of a sequence.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>length</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>builtin_function_or_method</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><p>Return the number of items in a container.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>list</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>args, kwargs, b</i>)<br/> <p>Convert the value into a list.  If it was a string the returned list     will be a list of characters.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>lower</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>s</i>)<br/> <p>Convert a value to lowercase.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>map</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>args, kwargs, b</i>)<br/> <p>Applies a filter on a sequence of objects or looks up an attribute.     This is useful when dealing with lists of objects but you are really     only interested in a certain value of it.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>min</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>environment, value, case_sensitive, attribute</i>)<br/> <p>Return the smallest item from the sequence.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>max</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>environment, value, case_sensitive, attribute</i>)<br/> <p>Return the largest item from the sequence.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>pprint</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value</i>)<br/> <p>Pretty print a variable. Useful for debugging.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>random</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>context, seq</i>)<br/> <p>Return a random item from the sequence.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>reject</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>args, kwargs, b</i>)<br/> <p>Filters a sequence of objects by applying a test to each object,     and rejecting the objects with the test succeeding.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>rejectattr</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>args, kwargs, b</i>)<br/> <p>Filters a sequence of objects by applying a test to the specified     attribute of each object, and rejecting the objects with the test     succeeding.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>replace</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>eval_ctx, s, old, new, count</i>)<br/> <p>Return a copy of the value with all occurrences of a substring     replaced with a new one. The first argument is the substring     that should be replaced, the second is the replacement string.     If the optional third argument <code>count</code> is given, only the first     <code>count</code> occurrences are replaced.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>reverse</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, rv, e</i>)<br/> <p>Reverse the object or return an iterator that iterates over it the other     way round.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>round</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, precision, method, func</i>)<br/> <p>Round the number to a given precision. The first     parameter specifies the precision (default is <code>0</code>), the     second the rounding method.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>safe</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value</i>)<br/> <p>Mark the value as safe which means that in an environment with automatic     escaping enabled this variable will not be escaped.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>select</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>args, kwargs, b</i>)<br/> <p>Filters a sequence of objects by applying a test to each object,     and only selecting the objects with the test succeeding.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>selectattr</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>args, kwargs, b</i>)<br/> <p>Filters a sequence of objects by applying a test to the specified     attribute of each object, and only selecting the objects with the     test succeeding.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>slice</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>args, kwargs, b</i>)<br/> <p>Slice an iterator and return a list of lists containing     those items. Useful if you want to create a div containing     three ul tags that represent columns.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>sort</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>environment, value, reverse, case_sensitive, attribute, key_func</i>)<br/> <p>Sort an iterable using Python's :func:<code>sorted</code>.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>string</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>builtin_function_or_method</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><p>Convert an object to a string if it isn't already. This preserves a :class:<code>Markup</code> string rather than converting it back to a basic string, so it will still be marked as safe and won't be escaped again.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>striptags</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value</i>)<br/> <p>Strip SGML/XML tags and replace adjacent whitespace by one space.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>sum</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>args, kwargs, b</i>)<br/> <p>Returns the sum of a sequence of numbers plus the value of parameter     'start' (which defaults to 0).  When the sequence is empty it returns     start.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>title</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>s</i>)<br/> <p>Return a titlecased version of the value. I.e. words will start with     uppercase letters, all remaining characters are lowercase.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>trim</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, chars</i>)<br/> <p>Strip leading and trailing characters, by default whitespace.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>truncate</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>env, s, length, killwords, end, leeway, result</i>)<br/> <p>Return a truncated copy of the string. The length is specified     with the first parameter which defaults to <code>255</code>. If the second     parameter is <code>true</code> the filter will cut the text at length. Otherwise     it will discard the last word. If the text was in fact     truncated it will append an ellipsis sign (<code>"..."</code>). If you want a     different ellipsis sign than <code>"..."</code> you can specify it using the     third parameter. Strings that only exceed the length by the tolerance     margin given in the fourth parameter will not be truncated.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>unique</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>environment, value, case_sensitive, attribute, getter, seen, item, key</i>)<br/> <p>Returns a list of unique items from the given iterable.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>upper</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>s</i>)<br/> <p>Convert a value to uppercase.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>urlencode</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>value, items</i>)<br/> <p>Quote data for use in a URL path or query using UTF-8.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>urlize</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>eval_ctx, value, trim_url_limit, nofollow, target, rel, extra_schemes, policies, rel_parts, scheme, rv</i>)<br/> <p>Convert URLs in text into clickable links.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>wordcount</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>s</i>)<br/> <p>Count the words in that string.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>wordwrap</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>environment, s, width, break_long_words, wrapstring, break_on_hyphens</i>)<br/> <p>Wrap a string to the given width. Existing newlines are treated     as paragraphs to be wrapped separately.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>xmlattr</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>eval_ctx, d, autospace, rv</i>)<br/> <p>Create an SGML/XML attribute string based on the items in a dict.     All values that are neither <code>none</code> nor <code>undefined</code> are automatically     escaped.</p></td>
+
+        </tr>
+
+        <tr>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><b>tojson</b></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
+
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>eval_ctx, value, indent, policies, dumps, kwargs</i>)<br/> <p>Serialize an object to a string of JSON, and mark it safe to     render in HTML. This filter is only for use in HTML documents.</p></td>
+
+        </tr>
+
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../accounting/cost-of-living-adjustments/" class="btn btn-neutral float-right" title="Cost of Living Adjustments">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Welcome to DAZSER Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>2022</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/dazser/docs/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../accounting/cost-of-living-adjustments/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
