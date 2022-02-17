@@ -22,7 +22,10 @@ is the source of the list.
 | tampa      | Tampa      |
 
 This will upload the prospects into the `x_prospects` table. The next step is to run the geocoder. This should be
-running every 15 minutes, but may not be for `x_prospects`. Finally, run `deduplicate-x-prospects.ts`. This
+running every 15 minutes, but may not be for `x_prospects`.
+
+## Deduplicate TM Prospects
+Finally, run `deduplicate-x-prospects.ts`. This
 is a Lambda function that must be invoked. (This is not setup to be automatic yet,
 [tracked here](https://github.com/DAZSER/backend/issues/59)). This function will clean up all the NAICS codes, remove
 any obvious duplicates (Same InfoUSA number, same exact geocode), deal with bad zip codes, etc...
