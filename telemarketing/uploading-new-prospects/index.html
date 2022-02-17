@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Kyle McNally">
-  <link rel="canonical" href="https://dazser.github.io/docs/sales/adding-a-custom-appointment/">
+  <link rel="canonical" href="https://dazser.github.io/docs/telemarketing/uploading-new-prospects/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Adding a custom Appointment - DAZSER</title>
+  <title>Uploading new prospects into the web app - DAZSER</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Adding a custom Appointment";
-    var mkdocs_page_input_path = "sales/adding-a-custom-appointment.md";
-    var mkdocs_page_url = "/docs/sales/adding-a-custom-appointment/";
+    var mkdocs_page_name = "Uploading new prospects into the web app";
+    var mkdocs_page_input_path = "telemarketing/uploading-new-prospects.md";
+    var mkdocs_page_url = "/docs/telemarketing/uploading-new-prospects/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -75,19 +75,19 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Sales</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Adding a custom Appointment</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sales/adding-a-custom-appointment/">Adding a custom Appointment</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Telemarketing</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../telemarketing/dealing-with-disconnected-prospects/">Dealing with disconnected prospects</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../dealing-with-disconnected-prospects/">Dealing with disconnected prospects</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../telemarketing/dealing-with-duplicate-prospects/">Dealing with duplicate prospects</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../dealing-with-duplicate-prospects/">Dealing with duplicate prospects</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../telemarketing/uploading-new-prospects/">Uploading new prospects into the web app</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Uploading new prospects into the web app</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -111,14 +111,14 @@
     
       
         
-          <li>Sales &raquo;</li>
+          <li>Telemarketing &raquo;</li>
         
       
     
-    <li>Adding a custom Appointment</li>
+    <li>Uploading new prospects into the web app</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/dazser/docs/edit/master/docs/sales/adding-a-custom-appointment.md"
+        <a href="https://github.com/dazser/docs/edit/master/docs/telemarketing/uploading-new-prospects.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -130,7 +130,81 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="adding-a-custom-appointment">Adding a custom Appointment</h1>
+                <h1 id="uploading-new-prospects-into-the-web-app">Uploading new prospects into the web app</h1>
+<p>In order to add new prospects into the web app, a CSV file must be uploaded to
+<code>s3://dazser-files/prospects/{{ region }}/{{ listSource }}/*.csv</code> where <code>region</code> is the name of the region, and <code>listSource</code>
+is the source of the list.</p>
+<table>
+<thead>
+<tr>
+<th>listSource</th>
+<th>List Source</th>
+<th>Definition for the CSV file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>infousa</td>
+<td>InfoUSA</td>
+<td>https://github.com/DAZSER/backend/blob/master/src/upload-x-prospects.ts#L37</td>
+</tr>
+<tr>
+<td>jkcorporate</td>
+<td>Jani-King Corporate</td>
+<td>https://github.com/DAZSER/backend/blob/master/src/upload-x-prospects.ts#L54</td>
+</tr>
+<tr>
+<td>customers</td>
+<td>Our Customers table</td>
+<td>https://github.com/DAZSER/backend/blob/master/src/upload-x-prospects.ts#L69</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>regionName</th>
+<th>Region</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baltimore</td>
+<td>Baltimore</td>
+</tr>
+<tr>
+<td>birmingham</td>
+<td>Birmingham</td>
+</tr>
+<tr>
+<td>orlando</td>
+<td>Orlando</td>
+</tr>
+<tr>
+<td>tampa</td>
+<td>Tampa</td>
+</tr>
+</tbody>
+</table>
+<p>This will upload the prospects into the <code>x_prospects</code> table. The next step is to run the geocoder. This should be
+running every 15 minutes, but may not be for <code>x_prospects</code>. Finally, run <code>deduplicate-x-prospects.ts</code>. This
+is a Lambda function that must be invoked. (This is not setup to be automatic yet,
+<a href="https://github.com/DAZSER/backend/issues/59">tracked here</a>). This function will clean up all the NAICS codes, remove
+any obvious duplicates (Same InfoUSA number, same exact geocode), deal with bad zip codes, etc...</p>
+<table>
+<thead>
+<tr>
+<th>Permissions</th>
+<th>Last Updated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Administrator</td>
+<td>Feb 17, 2022 04:15:55 PM</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
@@ -138,10 +212,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../telemarketing/dealing-with-disconnected-prospects/" class="btn btn-neutral float-right" title="Dealing with disconnected prospects">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../../general/geocoder/" class="btn btn-neutral" title="Geocoder"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../dealing-with-duplicate-prospects/" class="btn btn-neutral" title="Dealing with duplicate prospects"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -173,10 +245,8 @@
         </span>
     
     
-      <span><a href="../../general/geocoder/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../dealing-with-duplicate-prospects/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../../telemarketing/dealing-with-disconnected-prospects/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

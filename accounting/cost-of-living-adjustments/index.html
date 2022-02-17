@@ -71,6 +71,11 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../customers/search-for-an-eligble-franchise/">Search for an eligble franchise</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">General</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general/geocoder/">Geocoder</a>
+                    </li>
+                </ul>
                 <p class="caption"><span class="caption-text">Sales</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../sales/adding-a-custom-appointment/">Adding a custom Appointment</a>
@@ -81,6 +86,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../telemarketing/dealing-with-disconnected-prospects/">Dealing with disconnected prospects</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../telemarketing/dealing-with-duplicate-prospects/">Dealing with duplicate prospects</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../telemarketing/uploading-new-prospects/">Uploading new prospects into the web app</a>
                     </li>
                 </ul>
       </div>
@@ -125,11 +132,39 @@
               
                 <h1 id="cost-of-living-adjustments">Cost of Living Adjustments</h1>
 <p>To upload a Cost of Living Adjustment file, upload a new CSV file with the column titles of
-<code>id,lastColaAmount,lastColaDate,newAmount</code> to the S3 Bucket <code>s3://dazser-files/cola/{{ region }}/*.csv</code>. This will kick
-off <a href="https://github.com/DAZSER/backend/blob/master/src/cola.ts"><code>backend/cola.ts#default()</code></a> which will process the
+<code>id,lastColaAmount,lastColaDate,newAmount</code> to the S3 Bucket <code>s3://dazser-files/cola/{{ regionName }}/*.csv</code>. This will
+kick off <a href="https://github.com/DAZSER/backend/blob/master/src/cola.ts"><code>backend/cola.ts</code></a> which will process the
 CSV file and upload the results to specified region.</p>
+<table>
+<thead>
+<tr>
+<th>regionName</th>
+<th>Region</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baltimore</td>
+<td>Baltimore</td>
+</tr>
+<tr>
+<td>birmingham</td>
+<td>Birmingham</td>
+</tr>
+<tr>
+<td>orlando</td>
+<td>Orlando</td>
+</tr>
+<tr>
+<td>tampa</td>
+<td>Tampa</td>
+</tr>
+</tbody>
+</table>
 <p>Example:</p>
-<pre><code>id,newAmount,lastColaDate,lastColaAmount
+<pre><code>s3://dazser-files/cola/tampa/colafor2022.csv
+---
+id,newAmount,lastColaDate,lastColaAmount
 4517,1168,10/1/2021,1
 7497,1,10/1/2021,1
 </code></pre>
@@ -143,7 +178,7 @@ CSV file and upload the results to specified region.</p>
 <tbody>
 <tr>
 <td>Administrator</td>
-<td>Feb 17, 2022 03:41:00 PM</td>
+<td>Feb 17, 2022 04:15:55 PM</td>
 </tr>
 </tbody>
 </table>

@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dazser.github.io/docs/general/geocoder/</loc>
+         <lastmod>2022-02-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dazser.github.io/docs/sales/adding-a-custom-appointment/</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
@@ -37,6 +42,11 @@
     </url>
     <url>
          <loc>https://dazser.github.io/docs/telemarketing/dealing-with-duplicate-prospects/</loc>
+         <lastmod>2022-02-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dazser.github.io/docs/telemarketing/uploading-new-prospects/</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
