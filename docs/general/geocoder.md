@@ -1,6 +1,7 @@
 ---
 permissions: Administrator
 ---
+
 # Geocoder
 
 The geocoder will Geocode all entities able to be geocoded. We are currently using geocodio to geocode our entities.
@@ -14,6 +15,13 @@ Sanatize Addresses is a sub component of the Geocoder, which is found in `sanati
 addresses for `"gen_customers_business", "gen_franchises", // "x_prospects", "tm_prospects",`, and clean them by using
 the USPS's API. If the value of the address is sanatized, `bad_address` is updated with a `2`.
 
-Permissions | Last Updated
---- | ---
-{{ permissions }} | {{ git.date.strftime("%b %d, %Y %I:%M:%S %p") }}
+| `bad_address` | Meaning                                       |
+| ------------- | --------------------------------------------- |
+| `0`           | Valid, Found, and Sanatized address & geocode |
+| `1`           | Bad Original Address                          |
+| `2`           | Updated USPS Address, needs Geocode           |
+| `3`           | Unable to Verify address                      |
+
+| Permissions       | Last Updated                                     |
+| ----------------- | ------------------------------------------------ |
+| {{ permissions }} | {{ git.date.strftime("%b %d, %Y %I:%M:%S %p") }} |
