@@ -59,11 +59,6 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../accounting/cost-of-living-adjustments/">Cost of Living Adjustments</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Admin</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../admin/address-sanatization-and-geocoding/">Address Sanatization and Geocoding</a>
-                    </li>
-                </ul>
                 <p class="caption"><span class="caption-text">Customers</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../customers/search-for-an-eligble-franchise/">Search for an eligble franchise</a>
@@ -144,6 +139,32 @@ the USPS's API. If the value of the address is sanatized, <code>bad_address</cod
 <table>
 <thead>
 <tr>
+<th><code>bad_address</code></th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>Valid, Found, and Sanatized address &amp; geocode</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>Bad Original Address</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>Updated USPS Address, needs Geocode</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>Unable to Verify address</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
 <th>Permissions</th>
 <th>Last Updated</th>
 </tr>
@@ -151,7 +172,7 @@ the USPS's API. If the value of the address is sanatized, <code>bad_address</cod
 <tbody>
 <tr>
 <td>Administrator</td>
-<td>Feb 17, 2022 04:22:08 PM</td>
+<td>Feb 17, 2022 04:25:41 PM</td>
 </tr>
 </tbody>
 </table>
