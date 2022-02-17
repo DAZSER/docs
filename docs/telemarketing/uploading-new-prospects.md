@@ -25,10 +25,9 @@ This will upload the prospects into the `x_prospects` table. The next step is to
 running every 15 minutes, but may not be for `x_prospects`.
 
 ## Deduplicate TM Prospects
-Finally, run `deduplicate-x-prospects.ts`. This
-is a Lambda function that must be invoked. (This is not setup to be automatic yet,
-[tracked here](https://github.com/DAZSER/backend/issues/59)). This function will clean up all the NAICS codes, remove
-any obvious duplicates (Same InfoUSA number, same exact geocode), deal with bad zip codes, etc...
+Finally, run `deduplicate-x-prospects.ts`. This is a node function that must be run manually (NOT a Lambda function).
+This function will clean up all the NAICS codes, remove any obvious duplicates
+(Same InfoUSA number, same exact geocode), deal with bad zip codes, etc...
 
 | Permissions       | Last Updated                                     |
 | ----------------- | ------------------------------------------------ |
